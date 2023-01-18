@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection){
 }
 function game(){
     let playerSelection, computerSelection, result, score = 0;
-    
+    const textScore = document.getElementById("score");
 
     for (let i = 0; i < 5; i++){
         playerSelection = prompt("What is your selection?").toLowerCase();
@@ -40,7 +40,7 @@ function game(){
 
         if(result===true){
             score+=1;
-            document.getElementById("score").innerHTML = score;
+            textScore.innerHTML = score;
             alert(`You win! ${playerSelection} beats ${computerSelection}`);
         }else if(result===false){
             alert(`You lose! ${computerSelection} beats ${playerSelection}`);
