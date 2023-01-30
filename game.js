@@ -1,35 +1,59 @@
+let player1Score = 0;
+let player2Score = 0;
+
+const buttons = document.querySelectorAll(".play-button");
+buttons.forEach(button=>{
+    button.addEventListener('click',()=>{
+        playRound(button.id,gameComputerChoice());
+        const player1ScoreTag = document.querySelector(".player1-score");
+        const player2ScoreTag = document.querySelector(".player2-score");
+        player1ScoreTag.innerText = player1Score;
+        player2ScoreTag.innerText = player2Score;
+    });
+});
+
 function gameComputerChoice(){
     let choices = ["rock","paper","scissors"];
-    return choices[Math.floor(Math.random()*3)];
+    let emojis = ["🪨","📄","✂️"]
+    let choice = Math.floor(Math.random()*3);
+    const botDiv = document.querySelector(".bot");
+    botDiv.innerText = emojis[choice]+choices[choice].slice(0,1).toUpperCase()+choices[choice].slice(1);
+    return choices[choice];
 }
-function playRound(playerSelection, computerSelection){
-    if(playerSelection == "rock"){
-        if(computerSelection == "paper"){
+function playRound(player1Selection, player2Selection){
+    if(player1Selection == "rock"){
+        if(player2Selection == "paper"){
+            player2Score+=1;
             return false;
-        }else if(computerSelection=="scissors"){
+        }else if(player2Selection=="scissors"){
+            player1Score+=1;
             return true;
         }else{
             return null;
         }
-    }else if(playerSelection == "paper"){
-        if(computerSelection == "scissors"){
+    }else if(player1Selection == "paper"){
+        if(player2Selection == "scissors"){
+            player2Score+=1;
             return false;
-        }else if(computerSelection=="rock"){
+        }else if(player2Selection=="rock"){
+            player1Score+=1;
             return true;
         }else{
             return null;
         }
-    }else if(playerSelection == "scissors"){
-        if(computerSelection == "rock"){
+    }else if(player1Selection == "scissors"){
+        if(player2Selection == "rock"){
+            player2Score+=1;
             return false;
-        }else if(computerSelection=="paper"){
+        }else if(player2Selection=="paper"){
+            player1Score+=1;
             return true;
         }else{
             return null;
         }
     }
 }
-function game(){
+/* function game(){
     let playerSelection, computerSelection, result, score = 0;
     const textScore = document.getElementById("score");
 
@@ -48,4 +72,4 @@ function game(){
             alert(`It's a tie ${playerSelection} and ${computerSelection}`);
         }
     }
-}
+} */
