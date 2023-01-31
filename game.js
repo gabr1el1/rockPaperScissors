@@ -16,8 +16,8 @@ function gameComputerChoice(){
     let choices = ["rock","paper","scissors"];
     let emojis = ["🪨","📄","✂️"]
     let choice = Math.floor(Math.random()*3);
-    const botDiv = document.querySelector(".bot");
-    botDiv.innerText = emojis[choice]+choices[choice].slice(0,1).toUpperCase()+choices[choice].slice(1);
+    const choiceSpan = document.querySelector(".choice");
+    choiceSpan.innerText = emojis[choice]+choices[choice].slice(0,1).toUpperCase()+choices[choice].slice(1);
     return choices[choice];
 }
 function playRound(player1Selection, player2Selection){

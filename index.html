@@ -10,23 +10,24 @@
 </head>
 <body>
     <section class="container">
-        <div class="player player1">
-            <div class="wrap-game">
-                <button class="play-button" id="rock">&#x1FAA8;Rock</button>
-                <button class="play-button" id="paper">&#128196;Paper</button>
-                <button class="play-button" id="scissors">&#9986;Scissors</button>
+        <div class="playing">
+            <div class="player player1">
+                <div class="wrap-game">
+                    <button class="play-button" id="rock">&#x1FAA8;Rock</button>
+                    <button class="play-button" id="paper">&#128196;Paper</button>
+                    <button class="play-button" id="scissors">&#9986;Scissors</button>
+                </div>    
             </div>
-                
+            <div class="player player2">
+                <div class="wrap-game bot">
+                    <span class="choice"></span>
+                </div>
+            </div>
         </div>
         <div class="score">
             <div>SCORE</div>
             <div>Player: <span class="player1-score"></span></div>
             <div>Bot: <span class="player2-score"></span></div>
-        </div>
-        <div class="player player2">
-            <div class="wrap-game bot">
-
-            </div>
         </div>
     </section>
     <footer>
