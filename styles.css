@@ -45,6 +45,7 @@ div.player{
 .player .play-button{
     aspect-ratio: 2/0.5;
     border-radius: 10px;
+    font-size: 1.5em;
 }
 
 .player .play-button:focus{
@@ -69,20 +70,25 @@ div.player{
     color: white;
     
 }
-
-.change{
-    transition: all 0.4s ease-in;
-    font-size: 1.4rem;
+span.choice{
+    transition: 0.6s ease all;
+    opacity: 0.5;
+    font-size: 1.5em;;
+}
+span.change{
+    opacity: 1;
 }
 
 div.score{
     background-color: black;
     color: white;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
     border-radius: 0 0 10px 10px;
     border-top: medium solid white;
 }
-footer{
+ul.info-game{
+    list-style-type: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,6 +96,14 @@ footer{
     color: white;
     font-size: 0.7rem;
     background-color: rgba(0, 0, 0, 0.533);
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(205, 4, 255, 0.4);
+    padding: 10px;
+    color: white;
 }
 
 
